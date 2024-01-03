@@ -9,7 +9,7 @@ wall "	----------------------------------------------------------
 	#Last Boot	: $(who -b | awk '{printf $3 " " $4}')
 	#LVM Use	: $(if [ $(lsblk | grep -c "lvm") -eq 0 ]; then echo no; else echo yes; fi)
 	#Connections TCP: $(netstat -t | grep -c "ESTABLISHED") ESTABLISHED
-	#User log	:
+	#User log	: $(who -u | awk '{print $1}' | uniq | wc -l)
 	#Network	:
 	#Sudo		:
 	----------------------------------------------------------"
