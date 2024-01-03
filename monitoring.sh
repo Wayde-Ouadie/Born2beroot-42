@@ -10,6 +10,6 @@ wall "	----------------------------------------------------------
 	#LVM Use	: $(if [ $(lsblk | grep -c "lvm") -eq 0 ]; then echo no; else echo yes; fi)
 	#Connections TCP: $(netstat -t | grep -c "ESTABLISHED") ESTABLISHED
 	#User log	: $(who -u | awk '{print $1}' | uniq | wc -l)
-	#Network	:
+	#Network	: IP $(hostname -I) ($(cat /sys/class/net/enp0s3/adress))
 	#Sudo		:
 	----------------------------------------------------------"
