@@ -11,5 +11,5 @@ wall "	----------------------------------------------------------
 	#Connections TCP: $(netstat -t | grep -c "ESTABLISHED") ESTABLISHED
 	#User log	: $(who -u | awk '{print $1}' | uniq | wc -l)
 	#Network	: IP $(hostname -I) ($(cat /sys/class/net/enp0s3/adress))
-	#Sudo		:
+	#Sudo		: $(journalctl -q _COMM=sudo | grep -c "COMMAND")
 	----------------------------------------------------------"
